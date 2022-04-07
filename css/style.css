@@ -20,23 +20,7 @@ h1{
    margin-bottom: 47px;
 }
 
-.front{
-    width: 117px;
-    height:146px;
-    background-color: #A7E9AF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 17px;
-    margin-left: 17px;
-    margin-bottom: 34px;
-}
 
-.cards{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-}
 
 img{
     width: 100px;
@@ -44,21 +28,6 @@ img{
 }
 
 .teste{background-color: red;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -94,3 +63,25 @@ img{
     transform: rotateY(-180deg);
   }
 
+  .front{
+    width: 117px;
+    height:146px;
+    background-color: #A7E9AF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 17px;
+    margin-left: 17px;
+    margin-bottom: 34px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+
+.esconde{
+display: none;
+}
