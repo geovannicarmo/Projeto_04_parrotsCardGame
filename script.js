@@ -99,7 +99,20 @@ function virarcarta(elementclicked){
   b=0; c=0;
   contadorAcertos++
   if(contadorAcertos===nuberCards/2){
-    alert(`Você ganhou em ${contador} jogadas!`)
+
+    clearInterval(idInterval);
+
+    alert(`Você ganhou em ${contador} jogadas e em ${tempo} segundos`)
+
+    let novoJogo=0;
+
+    while(novoJogo!=="sim" && novoJogo!=="não"){
+      novoJogo=prompt(`Deseja jogar novamente?(responda sim ou não)`)
+    }
+
+    if(novoJogo==="sim"){
+    location.reload();}
+   
   }
   
 }
@@ -119,3 +132,15 @@ else{
         b=0; c=0;
   }}}
 
+  let tempo=0
+  let idInterval = setInterval(minhaFuncao, 1000);
+  
+  
+
+function minhaFuncao () {
+  
+  tempo++
+
+  document.querySelector("h2").innerHTML=tempo
+  
+}
