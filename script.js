@@ -1,5 +1,5 @@
 
-let nuberCards=8;
+let nuberCards;
 
 while(nuberCards<4 || nuberCards>14 || nuberCards==undefined || (nuberCards%2)!==0)
 {
@@ -28,89 +28,18 @@ console.log(definepares)
 
 
 
-
-
 let element = document.querySelector(".card");
-
 
 let cads = document.querySelector(".cards")
 
-
-
 let back = document.querySelectorAll("img")
-
-
-
-
-
-
-
-let b=0
-let c=0
-let b1=0
-let c1=0
-
-function virarcarta(elementclicked){
-
-  console.log(elementclicked)
-
- let antesdeVirar=elementclicked.outerHTML
-
- console.log(antesdeVirar)
-
-
-  
- 
-
-  
-
-  let a1=antesdeVirar
-
-  let a=elementclicked.innerHTML
-
-
- if(b===0){
-   b=a
-   b1=a1
- }
-
- else{
-   c=a
-   c1=a1
- 
-
- if (b==c){
-  console.log("iguais")
-  b=0; c=0;
-}
-else{
-  
-    console.log("diferentes")
-
-    elementclicked=b1
-
-    b=0; c=0;
-    b1=0; c1=0;
-
-  }
-
-
-}
-
-  
- }
-
-
-
 
 
 for(let i=1; i<nuberCards; i++){
 
  
-    cads.innerHTML+= element.outerHTML;
+  cads.innerHTML+= element.outerHTML;
 }
-
-
 
 
 let element1 = document.querySelectorAll(".card");
@@ -124,11 +53,62 @@ for(let i= 0; i<nuberCards; i++){
 
 }
 
+let b=0
+let c=0
+let b1=0
+let c1=0
+
+let contador=0;
+function virarcarta(elementclicked){
+
+  
+  contador++
+  console.log(contador)
+
+ let antesdeVirar=elementclicked.outerHTML
+
+ console.log(antesdeVirar)
 
 
+  
+  elementclicked.innerHTML=elementclicked.querySelector(".back-face").innerHTML
+
+  
+
+  let a1=antesdeVirar
+
+  let a=elementclicked
+  let ainner=elementclicked.innerHTML
 
 
+ if(b===0){
+   binner=ainner
+  
+  b=a
+   b1=a1
+ }
 
+ else{
+   c=a
+   c1=a1
+ 
+ if (binner==ainner){
+  console.log("iguais")
+  b=0; c=0;
+}
+else{
+  bt=b; ct=c 
+    console.log("diferentes")
 
+      
+      setTimeout(desvirarcarta, 1000);
+    }
 
+      function desvirarcarta(){
+        bt.outerHTML=b1
+        ct.outerHTML=a1
+      
+    
+        b=0; c=0;
+  }}}
 
