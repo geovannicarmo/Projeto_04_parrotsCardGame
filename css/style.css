@@ -1,11 +1,13 @@
 body{
-    background-color: #55E5;
+    background-color: #EEF9BF;
     display: flex;
     justify-content: center;
 }
 
 .page{
     width: 80%;
+   
+
 }
 
 h1{
@@ -35,6 +37,7 @@ img{
 
 .card {
     position: relative;
+    border-radius: 5px;
   }
 
   .face {
@@ -55,13 +58,6 @@ img{
     transform: rotateY(180deg);
   }
 
-  .card:active .back-face {
-    transform: rotateY(0deg);
-  }
-
-  .card:active .front-face {
-    transform: rotateY(-180deg);
-  }
 
   .front{
     width: 117px;
@@ -85,3 +81,22 @@ img{
 .esconde{
 display: none;
 }
+
+
+@media (max-width: 417px) {
+	h1{
+		width: 312px;
+    height: 63px;
+   font-size: 36px;
+   margin: 40px auto ;
+   text-align:center;
+	}
+
+  .cards {
+
+    width:120px;
+    display:block;
+    margin: 0 auto ;
+  }
+}
+

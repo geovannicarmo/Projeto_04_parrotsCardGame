@@ -3,7 +3,7 @@ let nuberCards;
 
 while(nuberCards<4 || nuberCards>14 || nuberCards==undefined || (nuberCards%2)!==0)
 {
-nuberCards= Number(prompt("Com quantas cartas vc quer jogar?"));
+nuberCards= Number(prompt("Com quantas cartas vc quer jogar?(numeros pares de 4 a 14)"));
 }
 
 
@@ -59,6 +59,8 @@ let b1=0
 let c1=0
 
 let contador=0;
+let contadorAcertos=0
+
 function virarcarta(elementclicked){
 
   
@@ -95,6 +97,11 @@ function virarcarta(elementclicked){
  if (binner==ainner){
   console.log("iguais")
   b=0; c=0;
+  contadorAcertos++
+  if(contadorAcertos===nuberCards/2){
+    alert(`Você ganhou em ${contador} jogadas!`)
+  }
+  
 }
 else{
   bt=b; ct=c 
