@@ -64,16 +64,21 @@ let contadorAcertos=0
 function virarcarta(elementclicked){
 
   
-  contador++
-  console.log(contador)
+
 
  let antesdeVirar=elementclicked.outerHTML
 
  console.log(antesdeVirar)
 
 
+  if(elementclicked.innerHTML!==elementclicked.querySelector(".back-face").innerHTML)
   
+  {
   elementclicked.innerHTML=elementclicked.querySelector(".back-face").innerHTML
+
+  contador++
+  console.log(contador)
+  }
 
   
 
@@ -98,22 +103,7 @@ function virarcarta(elementclicked){
   console.log("iguais")
   b=0; c=0;
   contadorAcertos++
-  if(contadorAcertos===nuberCards/2){
-
-    clearInterval(idInterval);
-
-    alert(`Você ganhou em ${contador} jogadas e em ${tempo} segundos`)
-
-    let novoJogo=0;
-
-    while(novoJogo!=="sim" && novoJogo!=="não"){
-      novoJogo=prompt(`Deseja jogar novamente?(responda sim ou não)`)
-    }
-
-    if(novoJogo==="sim"){
-    location.reload();}
-   
-  }
+  
   
 }
 else{
@@ -124,12 +114,39 @@ else{
       setTimeout(desvirarcarta, 1000);
     }
 
+
+    if(contadorAcertos===nuberCards/2){
+
+      clearInterval(idInterval);
+      setTimeout(fim, 100);
+    }
+
+    function fim(){
+
+  alert(`Você ganhou em ${contador} jogadas e em ${tempo} segundos`)
+
+  let novoJogo=0;
+
+  while(novoJogo!=="sim" && novoJogo!=="não"){
+    novoJogo=prompt(`Deseja jogar novamente?(responda sim ou não)`)
+  }
+
+  if(novoJogo==="sim"){
+  location.reload();
+}
+ 
+      
+  }
+
       function desvirarcarta(){
         bt.outerHTML=b1
         ct.outerHTML=a1
       
     
         b=0; c=0;
+
+
+
   }}}
 
   let tempo=0
