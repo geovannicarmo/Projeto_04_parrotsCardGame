@@ -22,9 +22,9 @@ for(let index=0;index <nuberCards/2;index++)
   definepares.push(minhaArray[index])
 }
 
-console.log(definepares)
+
 definepares.sort(comparador); 
-console.log(definepares)
+
 
 
 
@@ -63,12 +63,10 @@ let contadorAcertos=0
 
 function virarcarta(elementclicked){
 
-  
+  if(c===0){
 
 
  let antesdeVirar=elementclicked.outerHTML
-
- console.log(antesdeVirar)
 
 
   if(elementclicked.innerHTML!==elementclicked.querySelector(".back-face").innerHTML)
@@ -77,7 +75,7 @@ function virarcarta(elementclicked){
   elementclicked.innerHTML=elementclicked.querySelector(".back-face").innerHTML
 
   contador++
-  console.log(contador)
+
   }
 
   
@@ -100,7 +98,6 @@ function virarcarta(elementclicked){
    c1=a1
  
  if (binner==ainner){
-  console.log("iguais")
   b=0; c=0;
   contadorAcertos++
   
@@ -108,9 +105,7 @@ function virarcarta(elementclicked){
 }
 else{
   bt=b; ct=c 
-    console.log("diferentes")
-
-      
+  
       setTimeout(desvirarcarta, 1000);
     }
 
@@ -147,7 +142,7 @@ else{
 
 
 
-  }}}
+  }}}}
 
   let tempo=0
   let idInterval = setInterval(minhaFuncao, 1000);
